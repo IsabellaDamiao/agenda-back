@@ -26,7 +26,7 @@ public class AgendaService {
 		List<Agenda> list = repository.findAllOpen();
 		return list;
 	}
-
+	
 	public List<Agenda> findAllClosen() {
 		List<Agenda> list = repository.findAllClose();
 		return list;

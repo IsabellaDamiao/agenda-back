@@ -16,5 +16,5 @@ public interface AgendaRepository extends JpaRepository<Agenda, Integer> {
 
 	@Query("SELECT obj FROM Agenda obj WHERE obj.favorito = true")
 	List<Agenda> findAllClose();
-
+	
 }

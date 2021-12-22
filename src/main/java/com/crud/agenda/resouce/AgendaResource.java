@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,6 +19,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import com.crud.agenda.domian.Agenda;
 import com.crud.agenda.service.AgendaService;
 
+@CrossOrigin("*")
 @RestController
 @RequestMapping(value = "/agenda")
 public class AgendaResource {
@@ -30,7 +32,7 @@ public class AgendaResource {
 		Agenda obj = service.findById(id);
 		return ResponseEntity.ok().body(obj);
 	}
-	
+		
 	@GetMapping(value ="/open")
 	public ResponseEntity<List<Agenda>> listOpen(){
 	List<Agenda> list = service.findAllOpen();
